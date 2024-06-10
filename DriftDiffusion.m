@@ -1,12 +1,12 @@
 % Solving a system of master equations describing the number of electrons, holes, negatively and neutrally charged Nitrogen Vacancy centers, and 
-% negatively and neutrally charged substitutional Nitrogen defects as a  function of position on a 2D plane and time.
+% negatively and neutrally charged substitutional Nitrogen defects as a function of position on a 2D plane and time.
 % 
 % written by Artur Lozovoi
 %
-% Used in a manuscript entitled: "Probing metastable space-charge potentials in a wide bandgap semiconductor"
+% Used in the manuscript entitled: "Probing metastable space-charge potentials in a wide bandgap semiconductor"
 % by Lozovoi, A. et al. publsihed in Physical Review Letters 125, 256602 (2020).
 % 
-% Scaling factor 10^-7 is applied to some of the parameters (concentrations, diffusion coefficients, electroc fields in cosistency with
+% Scaling factor 10^-7 is applied to some of the parameters (concentrations, diffusion coefficients, electric fields in cosistency with
 % physical scaling laws of the problem. This trick allows convergence of the system of equations for high external elctric fields. Otherwise, 
 % the PDEsolver tolerance does not suffice for obtaining smooth solutions
 
