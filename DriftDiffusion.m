@@ -106,7 +106,7 @@ global SC gp gn kp k1 kh kN P Ic s kN0 parkX parkY
 %  The terms below define photoionization rates of each defect as a function of the spatial position relative to the beam center according to the Gaussian profile.
 %  The power scaling is either linear or quadratic depending on whether 1 or 2 photons are involved
 %  (square(state.time*10000)/2+0.5) term commented out in the ionization rate definitions allows to probe 
-%  time-dependent ionization, which demands higher computation power
+%  time-dependent ionization, which demands higher computational power
 
 k1 =  Ic*Ic*0.0046 * exp(-(((location.x-parkX).^2)+(location.y-parkY).^2)/(s^2)); % .* (square(state.time*10000)/2+0.5) ;         % (*Photoionization rate of NV-*)
 kh =  Ic*Ic*0.0107 * exp(-(((location.x-parkX).^2)+(location.y-parkY).^2)/(s^2)); % .* (square(state.time*10000)/2+0.5) ;         % (*Photoionization rate of NV0*)
@@ -129,7 +129,7 @@ function f2matrix = f2coeffunction(location,state)
 global E SC gn P Q Ic s kN0 parkX parkY
 
 %  (square(state.time*10000)/2+0.5) term commented out in the ionization rate definitions allows to probe 
-%  time-dependent ionization, which demands higher computation power
+%  time-dependent ionization, which demands higher computational power
 
 k1 =  Ic*Ic*0.0046 * exp(-(((location.x-parkX).^2)+(location.y-parkY).^2)/(s^2)); % .* (square(state.time*10000)/2+0.5) ;         % (*Photoionization rate of NV-*)
 kh =  Ic*Ic*0.0107 * exp(-(((location.x-parkX).^2)+(location.y-parkY).^2)/(s^2)); % .* (square(state.time*10000)/2+0.5) ;         % (*Photoionization rate of NV0*)
