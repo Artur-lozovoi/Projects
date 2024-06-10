@@ -56,7 +56,13 @@ timelength = length(t);           %  (*Number of sampled time points*)
 
 % Below the system of parabolic partial differential equations for 6
 % variables is defined in the following format:
-% m * ?2u/?t2 + d * ?u/?t ? ?·(c * ?u) + a * u = f
+% m * ?2u/?t2 + d * ?u/?t ? ?Â·(c * ?u) + a * u = f
+% The system of 6 rquations is used:
+% 1. Holes  2. Electrons  3. N0    4. NV-   5. x gradient of the charged defects   6. y gradient of the charged defects
+% Equations 5 and 6 solve for auxillary variables that help introduce the space charge electric field, which is proportional to the second derivative of the charge distribution
+% at each location
+% In general, the terms describing the processes of photoionization and -recombination, carrier diffusion, drift and capture are included. The details of each term can be changed
+% independently
 
 model = createpde(6);                                             %  Creating a system of 6 PDEs
 lengthX = 60;                                                     %  x dimension of the rectangular area
@@ -97,6 +103,8 @@ function a2matrix = a2coeffunction(location,state)
 
 global SC gp gn kp k1 kh kN P Ic s kN0 parkX parkY
 
+%  The terms below define photoionization rates of each defect as a function of the spatial position relative to the beam center according to the Gaussian profile.
+%  The power scaling is either linear or quadratic depending on whether 1 or 2 photons are involved
 %  (square(state.time*10000)/2+0.5) term commented out in the ionization rate definitions allows to probe 
 %  time-dependent ionization, which demands higher computation power
 
